@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1 class="title">hello world</h1>
+
+<a href="https://www.google.com.tw/">google</a>
+<a href="https://tw.yahoo.com/">yahoo</a>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script >
+        // $ :jquery  ('選擇器')
+        $('h1').css('color','red')
+        let x =10;
+        // $(' , ') ,一次選多個
+        $('a[href="https://www.google.com.tw/"],h1').css('color','green')
+    </script>
+
+    <script >
+        console.log('x:', x );
+        $('.title')
+    </script>
+</body>
+</html>

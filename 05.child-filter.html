@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div><span>span1</span></div>
+            <div class="box">box8</div>
+            <div class="box">box9</div>
+            <div><span>span2</span></div>
+            <div class="box">box10</div>
+            <div class="box">box11</div>
+            <div><span>span3</span></div>
+            <div class="box">box12</div>
+        </div>
+    </div>
+
+
+    <!-- <div class="container">
+        <div class="row">
+            
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div class="box">box8</div>
+            <div class="box">box9</div>
+            <div class="box">box10</div>
+            <div class="box">box11</div>
+            <div class="box">box12</div>
+        </div>
+    </div> -->
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+// :first-child - 選取第一個 子層第一個
+// :last-child - 選取最後一個
+// :first-of-type - 選取同類第一個
+// :last-of-type - 選取同類最後一個
+// :nth-child() - 第 n 個(從1開始)
+// :nth-last-child() - 倒數第 n 個
+// :nth-of-type()
+// :nth-last-of-type()
+
+        // $('.box:first-child').css('background','red')  
+        // //如果不是第一個沒反應 比如加一個 <span>hi</span>  first-of-type 同類就可以 不同家族只要是第一個子層都有效果
+        // $('.box:last-child').css('background','blue')
+        // $('.box:first-of-type').css('background','blue')
+        // $('.box:nth-child(3)').css('background','green')
+        $('div:nth-of-type(2)').css('background','green')
+    </script>
+</body>
+</html>
