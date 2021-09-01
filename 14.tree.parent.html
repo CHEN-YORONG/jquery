@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <ul class="level-1">
+                <li class="item-1">item-1</li>
+                <li class="item-2">item-2
+                    <ul class="level-2">
+                        <li class="item-01">item-01</li>
+                        <li class="item-02">item-02
+                            <ul class="level-3">
+                                <li class="item-001">item-001</li>
+                                <li class="item-002">item-002
+                                </li>
+                                <li class="item-003">item-003</li>
+                            </ul>
+                        </li>
+                        <li class="item-03">item-03</li>
+                    </ul>
+                </li>
+                <li class="item-3">item-3</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+
+    <script>
+        // .parent()- 往上選取一層
+        // .closest()- 最接近直系血親元素 (常用向上用closest 向下用find)
+        // .parents()- 往上選取全部
+        // .parentsUntil()- 往上選取全部並設定停止的元素
+        
+        // 1.
+        $('.item-003').parent().css('border', '1px solid red') // children 孫子找不到 只能找到兒子
+        // 2.
+        $('.item-003').closest('.item-2').css('border', '1px solid blue')// .item-1 找不到 不是直系
+        // 3.
+        $('.item-003').parentsUntil('.level-1').css('border', '1px solid red') // 不包含.level-1 以下全部
+    </script>
+
+
+</body>
+
+</html>

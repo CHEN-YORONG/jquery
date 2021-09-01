@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+
+    <h6>滑鼠事件(Mouse Event)</h6>
+    <p>
+        .click()- 點擊
+        .dblclick()- 連點
+        .contextmenu()- 右鍵
+        .mousedown()- 滑鼠按下左鍵
+        .mouseup()- 滑鼠放開左鍵
+        .mouseenter()- 滑鼠移進選擇器
+        .mouseleave()- 滑鼠離開
+        .hover()- 移進與離開
+    </p>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // .click()- 點擊
+        // .dblclick()- 連點
+        // .contextmenu()- 右鍵
+        // .mousedown()- 滑鼠按下左鍵
+        // .mouseup()- 滑鼠放開左鍵
+        // .mouseenter()- 滑鼠移進選擇器
+        // .mouseleave()- 滑鼠離開
+        // .hover()- 移進與離開
+        // 
+        $('.box').click(function(){
+            console.log('clicked');
+        })
+
+        $('.box').dblclick(function(){
+            console.log('dblclicked');
+        })// 上面click也會觸發
+        $('.box').contextmenu(function(){
+            $(this).css('background','red')
+        })
+
+        $('.box').mouseup(function(){
+            $(this).css('background','blue')
+        })
+        $('.box').mouseenter(function(){
+            $(this).css('background','black')
+        })
+        $('.box').mouseleave(function(){
+            $(this).css('background','blue')
+        })
+
+        $('.box').hover(function(){
+            $(this).css('background','blue')
+        })
+
+        $('.box').hover(
+        function(){
+            // 滑入
+            $(this).css('background','blue')
+        },
+        function(){
+            // 滑出
+            $(this).css('background','blue')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group mr-5">
+                        <select name="city" id="city" class="form-control">
+                            <option value="0">基隆</option>
+                            <option value="1">台北</option>
+                            <option value="2">新北</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="dist" id="dist" class="form-control">
+                            <option value="0">七堵區</option>
+                            <option value="1">中正區</option>
+                            <option value="2">暖暖區</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ]
+
+        $('#city').change(function () {
+            console.log('#city changed')
+            console.log('cityVal', $(this).val())
+
+            // 1.我要知道使用者選擇的城市
+            const distNameArray = districtArray[$(this).val()]
+            console.log('distNameArray:', distNameArray)
+            // 2.能不能用迴圈的方式修改OPTION的名稱
+            
+            // $('#dist option').each(function (index, element) {
+            //     console.log('text:', $(this).text());
+            //     console.log('index', index)
+            //     console.log('element', element)
+            //     $(this).text('中正區')
+            // })
+           
+            // 3.在迴圈裡面 想辦法取得不同的區域名稱
+            $('#dist option').each(function (index, element) {
+            console.log('text:', $(this).text());
+            console.log('index', index)
+            console.log('element', element)
+            console.log('distNameArray',distNameArray[index])
+            $(this).text(`${distNameArray[index]}區`)
+        })
+        })
+
+
+        //JS 迴圈 for() , forEach()
+        //JQ .each
+        // $('#dist').eq(0).text('中正區') //直接改第一個OPTION
+        $('#dist option').each(function (index, element) {
+            console.log('text:', $(this).text());
+            console.log('index', index)
+            console.log('element', element)
+            $(this).text('中正區')
+        })
+    </script>
+</body>
+
+</html>

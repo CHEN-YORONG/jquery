@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>絕對位置 offset</title>
+    <style>
+        body{
+            margin: 8px;
+            /* 瀏覽器預設 沒寫一樣有效果 */
+        }
+        .height{
+            height: 1200px;
+            width: 100%;
+            background-color: #ccc;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="height"></div>
+    <div class="box"></div>
+    <div class="height"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        console.log('box offset',$('.box').offset())
+
+        // 取值 left,top 是KEY 不是方法不用加 ()
+        console.log('box offset',$('.box').offset().left)
+        console.log('box offset',$('.box').offset().top)
+
+        // 直接改變位置 offset({ })     移動到網頁TOP :50px   left:100px
+        // $('.box').offset({
+        //     top:50, //數值為字串 50 跟 '50'都可以
+        //     left:100,
+        // })
+        
+        
+        $(window).scroll(function () {
+            console.log('scrollTop',$(window).scrollTop());
+            
+            
+            
+            // 333怎麼來的   console.log('scrollTop',$(window).scrollTop());
+            if($(window).scrollTop()>333){
+                $('.box').css('background','pink')
+            }else{
+                $('.box').css('background','#afa')
+            }
+        })
+    </script>
+</body>
+</html>

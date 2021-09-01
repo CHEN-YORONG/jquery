@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // innerWidth : element+padding
+        // outerWidth : element + padding + border  不含margin，括號內加入true就包含margin
+        // outerWidth(true) : element + padding + border + margin 
+
+
+        console.log('width',$('.box').width()) 
+        // 100
+        // 100+ pd(20*2)+border(5*2)=150 檢查的BOX-model
+
+        console.log('height',$('.box').height())
+        console.log('innerWidth',$('.box').innerWidth())
+        console.log('innerHeight',$('.box').innerHeight())
+        console.log('outerWidth',$('.box').outerWidth())
+        console.log('outerHeight',$('.box').outerHeight() )
+    </script>
+</body>
+</html>

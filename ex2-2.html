@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="myInput1">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.box').click(function () {
+            console.log('say hi')
+            console.log('this',$(this))
+            $(this).css('background','red')
+            console.log('input value:', $('#myInput1').val('john')      )
+        })
+    </script>
+</body>
+
+</html>

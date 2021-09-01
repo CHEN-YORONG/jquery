@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .fontS{
+                font-size: 0.8rem;
+            }
+            .fontM{
+                font-size: 1rem;
+            }
+            .fontL{
+                font-size: 1.2rem;
+            }
+        </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group">
+                <button id="btn-s" class="btn btn-info">S</button>
+                <button id="btn-m" class="btn btn-info active">M</button>
+                <button id="btn-l" class="btn btn-info">L</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>JQuery</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi debitis quisquam corporis quos rem eius natus. Molestias maxime cum facilis, accusantium adipisci velit magni ex, mollitia, inventore vitae nesciunt aliquid!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quaerat nostrum perferendis corporis consequuntur voluptate. Similique necessitatibus pariatur deleniti consectetur libero ratione veritatis illo magni quae. Non inventore ipsum voluptatem.</p>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script>
+            
+            $('#btn-s').on('click',function () {
+                $('p').removeClass().addClass('fontS')
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+            $('#btn-m').on('click',function () {
+                $('p').removeClass().addClass('fontM')
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+            $('#btn-l').on('click',function () {
+                $('p').removeClass().addClass('fontL')
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+        </script>
+</body>
+
+</html>

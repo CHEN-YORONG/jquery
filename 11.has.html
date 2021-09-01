@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="AA">
+        <div class="a1">A1</div>
+    </div>
+    <div>
+        <div class="a2">A2</div>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // .has()- 選取含有 xx
+        $("div").has(".a1").css("background", "red");
+        // has一樣不是加到.a1的div 是他的上一層DIV(.AA)
+    </script>
+</body>
+
+</html>

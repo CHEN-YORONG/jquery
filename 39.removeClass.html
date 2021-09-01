@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+        }
+        .bg-pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <div class="box"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script >
+
+        // .removeClass()- 移除 class
+        $('#add').on('click',function () {
+            // console.log('input value',$('input').val())
+            const inputVal=$('input').val() // 設變數
+            $('.box').addClass(inputVal)
+            
+        })
+
+        $('#remove').on('click',function () {
+            const inputVal=$('input').val()
+            $('.box').removeClass(inputVal)
+            
+        })
+    </script>
+</body>
+</html>

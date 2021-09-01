@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            position: absolute;
+            top: 0 px;
+            left: 0 px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap mx-auto mt-5">
+        <div class="box"></div>
+    </div>
+
+    <div class=" py-3 text-center">
+        <div>
+            <button id="up" class="btn btn-info">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+        <div class="pt-1">
+            <button id="left" class="btn btn-info mx-3">
+                <i class="fas fa-caret-left"></i>
+            </button>
+            <button id="right" class="btn btn-info mx-3">
+                <i class="fas fa-caret-right"></i>
+            </button>
+        </div>
+        <div>
+            <button id="down" class="btn btn-info">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        $('#up').on('click', function () {
+            if (parseInt($('.box').css('top')) <= 0) return
+            $('.box').css('top', '+=-20')
+        });
+        $('#down').on('click', function () {
+            if (parseInt($('.box').css('bottom')) <= 0) return
+            $('.box').css('top', '+=20')
+        });
+        $('#left').on('click', function () {
+            if (parseInt($('.box').css('left')) <= 0) return
+            $('.box').css('left', '+=-20')
+        });
+        $('#right').on('click', function () {
+            if (parseInt($('.box').css('right')) <= 0) return
+            $('.box').css('left', '+=20')
+        });
+
+
+        $(document).on('keydown', function () {
+            console.log('event', event.which)
+            // event.which 查看鍵盤每個鍵的數字
+            //left 37
+            if (event.which === 37) {
+                if (parseInt($('.box').css('left')) <= 0) return
+                $('.box').css('left', '+=-20')
+            }
+            //right 39
+            if (event.which === 39) {
+                if (parseInt($('.box').css('right')) <= 0) return
+                $('.box').css('left', '+=20')
+            }
+            //up 38
+            if (event.which === 38) {
+                if (parseInt($('.box').css('top')) <= 0) return
+                $('.box').css('top', '+=-20')
+            }
+            //down 40
+            if (event.which === 40) {
+                if (parseInt($('.box').css('bottom')) <= 0) return
+                $('.box').css('top', '+=20')
+            }
+        })
+    </script>
+</body>
+
+</html>

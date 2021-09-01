@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <form>
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+            placeholder="username">
+            
+        </div>
+        <div class="form-group">
+            <label for="email">email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button class='btn' type="button" class="btn btn-primary">auto input</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        $('form').submit(function(event){
+                event.preventDefault()// 阻止表格送出的EVENT
+                console.log(event)
+            })
+        $('.btn').click(function(){
+            $('#username').val('john')
+            $('#email').val('john@gmail.com')
+            $('#password').val('123456')
+        })
+    </script>
+</body>
+
+</html>

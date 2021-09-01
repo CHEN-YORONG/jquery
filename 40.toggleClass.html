@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;background-color: #afa;
+            transition: 1s;
+        }
+        .w200{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle">toggle</button>
+    <button id="hasclass">HasClass</button>
+    <div class="box"></div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('#toggle').on('click',function () {
+            $('.box').toggleClass('w200')
+            // .toggleClass()- 動態切換 class
+        })
+        $('#hasclass').on('click',function () {
+            if($('.box').hasClass('w200')){
+                $('.box').removeClass('w200')
+            }else{
+                $('.box').addClass('w200')
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            max-width: 800px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul.train {
+            display: flex;
+            width: 4000px;
+            /* FLEX 有shrink 自動縮小 所以手動五倍 800*5 */
+            list-style: none;
+            padding: 0;
+            transform: translateX(-00px);
+            transition: .5s;
+        }
+
+        .train li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-dots{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            /* left: 50%; transform: translateX(-50%); 
+            正中間寫法 */
+            bottom: 10px;
+        }
+        .slider-dots li{
+            width: 40px;
+            height: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            margin: 0 4px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    輪播牆概念<br>
+    口 :移動這個<br>
+    口口口口口
+    <div class="wrap">
+        <ul class="train">
+            <li>
+                <img src="./images/slide_01.jpg" alt="">
+            </li>
+            <li><img src="./images/slide_02.jpg" alt=""></li>
+            <li><img src="./images/slide_03.jpg" alt=""></li>
+            <li><img src="./images/slide_04.jpg" alt=""></li>
+            <li><img src="./images/slide_05.jpg" alt=""></li>
+        </ul>
+        <ul class="slider-dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+    
+    let page = 0;
+
+    let myIntervalID = '';
+
+    function start() {
+    myIntervalID = setInterval(() => {
+        page++;
+
+        if (page > 4) {
+            page = 0;
+        }
+        // console.log('hi', page);
+        $('ul.train').css('transform', `translateX(${page * -800}px)`);
+
+        $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
+    }, 3000);
+}
+
+    $('.slider-dots li').hover(function () {
+    clearInterval(myIntervalID);
+    // 我知道目前 HOVER　的是第幾個 LI 
+    console.log('index:', $(this).index());
+    page = $(this).index();
+    // 所以我也可以知道我的火車要移動多少距離?
+    // 0 -> 0
+    // 1 -> -800
+    // 2 -> -1600
+    // 3 -> -2400
+    // 4 -> -3200
+    console.log('move x:', $(this).index() * -800);
+
+    // 選取我的火車dom，並且修改他的 css
+    $('ul.train').css('transform', `translateX(${$(this).index() * -800}px)`);
+
+    $(this).css('background', '#fff').siblings().css('background', 'transparent');
+    }, function () {
+    start();
+    });
+
+    start();
+    $('.slider-dots li').eq(0).css('background', '#fff');
+
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered mt-5">
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script src="./js/jquery-3.6.0.js"></script>
+
+    <script>
+        // .eq()- 選取第 n 個
+        // .even()- 選取第偶數個 (從零開始計算)
+        // .odd()- 選取第奇數個 (從零開始計算)
+        // .first()- 選取第一個
+        // .last()- 選取最後一個
+
+
+
+        // $('td').odd().first().css('background','yellow')
+        $('td').css('background','yellow').odd().css('background','red').eq(3).css('background','green')
+        // 1.$('td').css('background','yellow') 全部變黃的   2.   .odd().css('background','red') 只有奇數變紅的 3.   .eq(3).css('background','green') 只有奇數得第四個變綠的(0 1 2 3)
+    </script>
+</body>
+
+</html>
